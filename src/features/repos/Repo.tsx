@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import { selectRepo } from './types/selectors';
 import { useAppDispatch } from '../../store';
 import { loadRepos } from './repoSlice';
+import IRepo from './types/IRepo';
 
 export default function Repo(): JSX.Element {
     const repos = useSelector(selectRepo);
     const dispatch = useAppDispatch();
+    const reposWithFilter = repos.filter((element : IRepo) => element.description !== null);
 
     useEffect(() => {
         dispatch(loadRepos());
@@ -18,7 +20,7 @@ export default function Repo(): JSX.Element {
             Info about repository
         </div>
         <ul>
-        {repos.map((el) => (
+        {reposWithFilter.map((el) => (
           <li key={el.id}>
             {el.name}
             <br />

@@ -1,4 +1,4 @@
-export default interface Repo {
+export default interface IRepo {
     id: number,
     name: string,
     html_url: string,

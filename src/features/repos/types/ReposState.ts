@@ -1,6 +1,6 @@
-import Repo from './Repo';
+import IRepo from './IRepo';
 
 export default interface ReposState {
-    repos: Repo[],
+    repos: IRepo[],
     error?: string,
 }

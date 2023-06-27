@@ -1,5 +1,5 @@
 import { RootState } from '../../../store';
-import Repo from './Repo';
+import IRepo from './IRepo';
 
 // eslint-disable-next-line import/prefer-default-export
-export const selectRepo = (state:RootState):Repo[] => state.repos.repos;
+export const selectRepo = (state:RootState):IRepo[] => state.repos.repos;
