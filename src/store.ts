@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import productsReducer from './features/products/productsSlice';
+import repoSlice from './features/repos/repoSlice';
 
 const store = configureStore({
   reducer: {
-    products: productsReducer
+    products: productsReducer,
+    repos: repoSlice,
   }
 });
 
