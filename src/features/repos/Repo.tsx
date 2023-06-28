@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectRepo } from './types/selectors';
+import { selectRepo } from './selectors';
 import { useAppDispatch } from '../../store';
 import { loadRepos } from './repoSlice';
 import IRepo from './types/IRepo';
