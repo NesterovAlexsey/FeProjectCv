@@ -22,13 +22,15 @@ export default function Repo(): JSX.Element {
         <ul>
         {reposWithFilter.map((el) => (
           <li key={el.id}>
-            {el.name}
+            Project name: {el.name}
             <br />
-            {el.language}
+            Code Language: {el.language}
             <br />
-            {el.html_url}
+            Link to repo: {el.html_url}
             <br />
-            {el.description}
+            Project description: {el.description}
+            <br />
+            -------------------------------------
           </li>
         )
         )}
