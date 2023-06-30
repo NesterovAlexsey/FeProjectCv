@@ -4,12 +4,13 @@ import * as api from './api';
 
 const initialState: ReposState = {
     repos: [],
+    userName: 'NesterovAlexsey',
     error: undefined
   };
 
   export const loadRepos = createAsyncThunk(
     'repos/loadRepos',
-    () => api.getAllRepository()
+    () => api.getAllRepository('NesterovAlexsey')
   );
 
   const reposSlice = createSlice({
@@ -20,6 +21,7 @@ const initialState: ReposState = {
         state.error = undefined;
       }
     },
+
     extraReducers: (builder) => {
       builder
         .addCase(loadRepos.fulfilled, (state, action) => {
