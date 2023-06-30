@@ -35,7 +35,7 @@ export default function Repo(): JSX.Element {
         <li className={styles.card} key={el.id}>
           <div className={styles.nameAndLogo}>
             <div className={styles.cardHeader}>
-              Project name: {el.name}
+              <h3>Project name: {el.name}</h3>
             </div>
             <div>
               <img className={styles.icon} src={getLogo(el.language)} alt={el.language} />

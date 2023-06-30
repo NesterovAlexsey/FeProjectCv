@@ -17,10 +17,12 @@
   .nameAndLogo {
     display: flex;
     justify-content: space-between;
+    align-content: flex-start;
   }
 
-  .cardHeader {
-    font-weight: bold;
+  .cardHeader{
+    display: flex;
+    align-content: flex-start;
   }
   
   .button {
@@ -29,7 +31,7 @@
   }
 
   .icon {
-    width: 30px !important
+    width: 40px !important
   }
 
   .link{

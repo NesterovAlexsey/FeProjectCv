@@ -19,7 +19,7 @@ export default function Info(): JSX.Element {
                 <img className={styles.avatar} src={infos.avatar_url} alt="MPhoto" />
             </div>
             <div className={styles.userInfo}>
-                <p className={styles.userName}>{infos.name} </p>
+                <p className={styles.userName}><h3>{infos.name}</h3></p>
                 <p>Location: {infos.location} </p>
             </div>
         </div>
