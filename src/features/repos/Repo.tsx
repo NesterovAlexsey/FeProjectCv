@@ -5,6 +5,7 @@ import { selectRepo } from './selectors';
 import { useAppDispatch } from '../../store';
 import { loadRepos } from './repoSlice';
 import IRepo from './types/IRepo';
+import styles from './Repo.module.css';
 
 export default function Repo(): JSX.Element {
   const repos = useSelector(selectRepo);
@@ -29,21 +30,29 @@ export default function Repo(): JSX.Element {
   }
 
   return (
-    <ul>
+    <ul className={styles.general}>
       {reposWithFilter.map((el) => (
-        <li key={el.id}>
-          Project name: {el.name}
-          <br />
-          Project description: {el.description}
-          <br />
-          <div>
-            <img src={getLogo(el.language)} alt={el.language} />
+        <li className={styles.card} key={el.id}>
+          <div className={styles.nameAndLogo}>
+            <div className={styles.cardHeader}>
+              Project name: {el.name}
+            </div>
+            <div>
+              <img className={styles.icon} src={getLogo(el.language)} alt={el.language} />
+            </div>
           </div>
-          <Link to={el.html_url} target="_blank">
-            Check Code!
-          </Link>
-          <br />
-          -------------------------------------
+          <div>
+            <div>
+              Description: {el.description}
+            </div>
+            <div className={styles.button}>
+              <div className={styles.buttonSize}>
+                <Link className={styles.link} to={el.html_url} target="_blank">
+                  Check Code!
+                </Link>
+              </div>
+            </div>
+          </div>
         </li>
       )
       )}
